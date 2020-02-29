@@ -3,8 +3,6 @@ import Sidebar from './components/Sidebar.js'
 import Editor from './components/Editor.js'
 import 'milligram'
 
-const NoteIDContext = React.createContext()
-
 class App extends Component {
   constructor(){
     super();
