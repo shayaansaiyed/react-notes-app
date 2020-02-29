@@ -40,7 +40,9 @@ class NoteList extends Component {
     for (i = 0; i < localStorage.length; i++){
       const id = i;
       if(localStorage[i] === ""){
-        notes.push(<li style={liStyle} key={i.toString()}><button style={newNoteStyle} className="row">New Note</button></li>)
+        notes.push(<li style={liStyle} key={i.toString()}><button style={newNoteStyle} className="row" onClick={()=>{this.handleClick(id)}}>
+                    New Note
+                   </button></li>)
       } else {
         notes.push(<li style={liStyle} key={i.toString()}><button style={buttonStyle} className="row" onClick={()=>{this.handleClick(id)}}>
           {localStorage[i]}

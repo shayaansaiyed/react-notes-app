@@ -32,7 +32,7 @@ class App extends Component {
 
   addNewNote(){
     this.setState({
-      currentNoteID: this.state.currentNoteID+1,
+      currentNoteID: localStorage.length,
       editorText: " "
     })
     console.log("Add New Note: Note ID: " + this.state.currentNoteID);
