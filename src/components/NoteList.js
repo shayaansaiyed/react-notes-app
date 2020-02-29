@@ -5,6 +5,23 @@ const liStyle = {
   listStyleType: 'none'
 };
 
+const buttonStyle = {
+  paddingLeft: '10px',
+  marginLeft: '5px',
+  width: '100%',
+  marginRight: '5px'
+}
+
+const newNoteStyle = {
+  paddingLeft: '10px',
+  marginLeft: '5px',
+  width: '100%',
+  marginRight: '5px',
+  background: 'none',
+  color: '#9b4dca'
+}
+
+
 class NoteList extends Component {
   constructor(props){
     super(props);
@@ -23,9 +40,9 @@ class NoteList extends Component {
     for (i = 0; i < localStorage.length; i++){
       const id = i;
       if(localStorage[i] === ""){
-        notes.push(<li style={liStyle} key={i.toString()}><div className="row">New Note</div></li>)
+        notes.push(<li style={liStyle} key={i.toString()}><button style={newNoteStyle} className="row">New Note</button></li>)
       } else {
-        notes.push(<li style={liStyle} key={i.toString()}><button className=" row" onClick={()=>{this.handleClick(id)}}>
+        notes.push(<li style={liStyle} key={i.toString()}><button style={buttonStyle} className="row" onClick={()=>{this.handleClick(id)}}>
           {localStorage[i]}
         </button></li>)
       }
@@ -34,27 +51,6 @@ class NoteList extends Component {
   }
 
   render(){
-    // let notes = [];
-    // let i = 0;
-    // for (i = 0; i < localStorage.length; i++){
-    //   if(localStorage[i] === ""){
-    //     notes.push(<li key={i.toString()}><div className="row">New Note</div></li>)
-    //   } else {
-    //     notes.push(<li key={i.toString()}><button className=" row" onClick={()=>{this.handleClick(i)}}>
-    //       {localStorage[i]}
-    //     </button></li>)
-    //   }
-    // }
-
-    // notes = localStorage.map((note) =>
-    //   console.log(note)
-    // )
-    // notes = notes.map((note)=>
-    //   <button className="row" onClick={()=>{this.handleClick(i)}}>
-    //     <li>note</li>
-    //   </button>
-    // )
-
     return <ul>{this.createNoteList()}</ul>
   }
 }
