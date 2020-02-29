@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/react-notes-app/static/css/main.34de6062.chunk.css",
+    "main.js": "/react-notes-app/static/js/main.b5a08fd4.chunk.js",
+    "main.js.map": "/react-notes-app/static/js/main.b5a08fd4.chunk.js.map",
+    "runtime-main.js": "/react-notes-app/static/js/runtime-main.f2504ab1.js",
+    "runtime-main.js.map": "/react-notes-app/static/js/runtime-main.f2504ab1.js.map",
+    "static/css/2.ab29d089.chunk.css": "/react-notes-app/static/css/2.ab29d089.chunk.css",
+    "static/js/2.b3046cae.chunk.js": "/react-notes-app/static/js/2.b3046cae.chunk.js",
+    "static/js/2.b3046cae.chunk.js.map": "/react-notes-app/static/js/2.b3046cae.chunk.js.map",
+    "index.html": "/react-notes-app/index.html",
+    "precache-manifest.b2ca350b038d100a254f0965d521955a.js": "/react-notes-app/precache-manifest.b2ca350b038d100a254f0965d521955a.js",
+    "service-worker.js": "/react-notes-app/service-worker.js",
+    "static/css/2.ab29d089.chunk.css.map": "/react-notes-app/static/css/2.ab29d089.chunk.css.map",
+    "static/css/main.34de6062.chunk.css.map": "/react-notes-app/static/css/main.34de6062.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f2504ab1.js",
+    "static/css/2.ab29d089.chunk.css",
+    "static/js/2.b3046cae.chunk.js",
+    "static/css/main.34de6062.chunk.css",
+    "static/js/main.b5a08fd4.chunk.js"
+  ]
+}
