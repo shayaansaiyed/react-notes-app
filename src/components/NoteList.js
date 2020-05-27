@@ -24,6 +24,7 @@ const newNoteStyle = {
 
 class NoteList extends Component {
   constructor(props){
+    console.log("NoteList constructor");
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
@@ -31,10 +32,12 @@ class NoteList extends Component {
   }
 
   handleClick(noteID){
+    console.log("NoteList handleClick");
     this.props.handleNoteClick(noteID);
   }
 
   createNoteList(){
+    console.log("NoteList createNoteList");
     let notes = [];
     let i = 0;
     for (i = 0; i < localStorage.length; i++){
@@ -42,17 +45,18 @@ class NoteList extends Component {
       if(localStorage[i] === ""){
         notes.push(<li style={liStyle} key={i.toString()}><button style={newNoteStyle} className="row" onClick={()=>{this.handleClick(id)}}>
                     New Note
-                   </button></li>)
+                   </button></li>);
       } else {
         notes.push(<li style={liStyle} key={i.toString()}><button style={buttonStyle} className="row" onClick={()=>{this.handleClick(id)}}>
           {localStorage[i]}
-        </button></li>)
+        </button></li>);
       }
     }
     return notes;
   }
 
   render(){
+    console.log("NoteList render");
     return <ul>{this.createNoteList()}</ul>
   }
 }

@@ -3,20 +3,18 @@ import Sidebar from './components/Sidebar.js'
 import Editor from './components/Editor.js'
 import 'milligram'
 
+
 class App extends Component {
   constructor(){
+    console.log("App constructor");
     super();
 
-    localStorage.clear()
-
     this.state = {
-      editorText: "",
-      currentNoteID: 0
+        editorText: "",
+        noteList: [],
+        currentNoteID: 0
     }
-
-    //initialize localStorage for first Note
-    localStorage.setItem(this.state.currentNoteID, this.state.editorText);
-
+      
     this.handleChange=this.handleChange.bind(this);
     this.addNewNote=this.addNewNote.bind(this);
     this.handleNoteSelection=this.handleNoteSelection.bind(this);
@@ -24,30 +22,43 @@ class App extends Component {
 
 
   handleChange(value){
+    console.log("App handleChange");
+    
+    let notesList = this.state.noteList;
+    notesList[this.state.currentNoteID] = value;
+    
     this.setState({
-      editorText: value
-    })
-    localStorage.setItem(this.state.currentNoteID, this.state.editorText);
+        noteList: notesList
+    })  
+      
+    console.log(this.state.noteList[this.state.currentNoteID]);
+    console.log(value);
   }
 
   addNewNote(){
+    console.log("App addNewNote");
+      
+    let currentNoteID = this.state.currentNoteID;
+    let notesList = this.state.noteList;
+    
+    currentNoteID = currentNoteID + 1;
+    notesList.push("");
+      
     this.setState({
-      currentNoteID: localStorage.length,
-      editorText: " "
+      currentNoteID: currentNoteID,
+      noteList: notesList
     })
-    console.log("Add New Note: Note ID: " + this.state.currentNoteID);
-    localStorage.setItem(this.state.currentNoteID, this.state.editorText);
   }
 
   handleNoteSelection(noteID){
+    console.log("App handleNoteSelection");
     this.setState({
-      currentNoteID: noteID,
-      editorText: localStorage.getItem(noteID)
+      currentNoteID: noteID
     })
   }
 
   render(){
-
+    console.log("App render");
     return(
       <div class="App">
         <div class="row">
@@ -60,7 +71,7 @@ class App extends Component {
           />
           <Editor
             handleChange = {this.handleChange}
-            text={this.state.editorText}
+            text={this.state.noteList[this.state.currentNoteID]}
           />
         </div>
       </div>
