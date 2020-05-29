@@ -37,7 +37,7 @@ class App extends Component {
 
   addNewNote(){
     console.log("App addNewNote");
-      
+    
     let currentNoteID = this.state.currentNoteID;
     let notesList = this.state.noteList;
     
@@ -48,6 +48,8 @@ class App extends Component {
       currentNoteID: currentNoteID,
       noteList: notesList
     })
+    
+    console.log(this.state.noteList);
   }
 
   handleNoteSelection(noteID){
@@ -68,6 +70,8 @@ class App extends Component {
           <Sidebar
             onNewNoteClick = {this.addNewNote}
             onClick = {this.handleNoteSelection}
+            notesList = {this.state.noteList}
+            currentNoteID = {this.state.currentNoteID}
           />
           <Editor
             handleChange = {this.handleChange}

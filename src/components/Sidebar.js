@@ -19,7 +19,11 @@ class Sidebar extends Component {
     return(
       <div class="Sidebar column column-25">
         <button className="button button-clear" onClick={this.props.onNewNoteClick}>+ new note</button>
-        <NoteList handleNoteClick={this.handleClick}/>
+        <NoteList 
+            handleNoteClick={this.handleClick}
+            notesList = {this.props.notesList}
+            currentNoteID = {this.props.currentNoteID}
+        />
       </div>
     )
   }
