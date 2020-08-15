@@ -71,7 +71,11 @@ class NoteList extends Component {
 
   render(){
     console.log("NoteList render");
-    return <ul>{this.createNoteList()}</ul>
+    return <>
+        <ul>
+        {this.createNoteList()}
+        </ul>
+      </>
   }
 }
 
